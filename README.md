@@ -4,7 +4,7 @@ This project uses machine learning to predict real estate property prices based 
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 real_estate_project/
 ├── data/
@@ -24,7 +24,7 @@ Edit
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 1. **Clone the Repository**  
    ```bash
@@ -46,7 +46,7 @@ pip install -r requirements.txt
 Add Dataset
 Place your dataset CSV file in the data/ folder as real_estate.csv.
 
-🚀 How to Run
+ How to Run
 From the project root directory:
 
 bash
