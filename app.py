@@ -12,31 +12,27 @@ st.title(" Real Estate Price Prediction")
 uploaded_file = st.file_uploader("Upload your real estate CSV", type="csv")
 
 if uploaded_file:
+    # Read CSV
     df = pd.read_csv(uploaded_file)
     st.write(" Raw Input Data", df.head())
 
     try:
-        # Preprocess
+        # Preprocess the data
         df_processed = preprocess_data(df)
-
-        # Drop rows with missing or invalid values if necessary
-        df_processed = df_processed.dropna()
-
         X = df_processed.drop("price", axis=1)
         y = df_processed["price"]
 
         # Train model
         model = train_linear_model(X, y)
 
-        # Predict
-        prediction = model.predict(X)
+        # Predict prices
+        predictions = model.predict(X)
+        df_processed['Predicted_Price'] = predictions
 
-        # Match rows between processed and original
-        df_result = df.loc[df_processed.index].copy()
-        df_result['Predicted_Price'] = prediction
-
+        # Display predictions
         st.success(" Prediction Successful")
-        st.write(" Predicted Results", df_result[['Predicted_Price']].head())
+        st.write(" Predicted Results", df_processed[['Predicted_Price']].head())
 
     except Exception as e:
         st.error(f" Error: {e}")
+
