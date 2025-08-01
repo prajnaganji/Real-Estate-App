@@ -1,0 +1,7 @@
+{
+  "python.pythonPath": "C:\\Users\\T490\\anaconda3\\envs\\real_estate_env\\python.exe",
+  "terminal.integrated.env.windows": {
+    "CONDA_DEFAULT_ENV": "real_estate_env",
+    "PATH": "C:\\Users\\T490\\anaconda3\\envs\\real_estate_env;C:\\Users\\T490\\anaconda3\\envs\\real_estate_env\\Scripts;${env:PATH}"
+  }
+}
